@@ -15,7 +15,7 @@ function InterviewPrep() {
   setVisibleAnswers([]);
 
   try {
-    const response = await fetch("http://localhost:5000/api/interview-questions", {
+    const response = await fetch("https://carrerconnectai-backend.onrender.com/api/interview-questions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

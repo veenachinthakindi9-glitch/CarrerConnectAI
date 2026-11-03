@@ -21,9 +21,10 @@ function Jobs({ searchTerm, selectedLocation }) {
           params.append('keyword', searchTerm.trim());
         }
 
+        
         const response = await fetch(
-          `http://localhost:5000/api/jobs?${params.toString()}`
-        );
+  `https://carrerconnectai-backend.onrender.com/api/jobs?${params.toString()}`
+);
 
         if (!response.ok) {
           throw new Error('Unable to fetch jobs.');
