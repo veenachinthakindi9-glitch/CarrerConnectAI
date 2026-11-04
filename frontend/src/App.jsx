@@ -193,6 +193,7 @@ const handleSearch = () => {
   <Jobs
     searchTerm={searchTerm}
     selectedLocation={selectedLocation}
+    onApply={handleApply}
   />
 )}
       <section className="features" id="about">

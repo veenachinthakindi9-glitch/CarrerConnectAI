@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Jobs({ searchTerm, selectedLocation }) {
+function Jobs({ searchTerm, selectedLocation, onApply }) {
   const [jobs, setJobs] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
-
+  
   React.useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
@@ -23,8 +23,8 @@ function Jobs({ searchTerm, selectedLocation }) {
 
         
         const response = await fetch(
-  `https://carrerconnectai-backend.onrender.com/api/jobs?${params.toString()}`
-);
+        `https://carrerconnectai-backend.onrender.com/api/jobs?${params.toString()}`
+       );
 
         if (!response.ok) {
           throw new Error('Unable to fetch jobs.');
@@ -56,6 +56,8 @@ function Jobs({ searchTerm, selectedLocation }) {
         <p>No jobs found. Try another search.</p>
       )}
 
+          
+
       <div className="jobs-container">
         {jobs.map((job) => (
           <div className="job-card" key={job.id}>
@@ -78,15 +80,12 @@ function Jobs({ searchTerm, selectedLocation }) {
             </p>
 
             <p>{job.summary}</p>
-
-            <a
-              href={job.apply_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apply-button"
-            >
-              Apply Now
-            </a>
+        <button
+  className="apply-button"
+  onClick={() => onApply(job)}
+>
+  Apply Now
+</button>
           </div>
         ))}
       </div>

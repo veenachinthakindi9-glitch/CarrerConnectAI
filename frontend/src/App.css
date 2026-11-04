@@ -1369,3 +1369,40 @@ img {
     padding: 35px 18px;
   }
 }
+.application-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.application-form h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.application-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.application-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.application-form button {
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+.application-form button[type="submit"] {
+  background: #2563eb;
+  color: white;
+}

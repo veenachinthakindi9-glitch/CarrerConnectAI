@@ -40,10 +40,10 @@ function ApplyForm({ selectedJob }) {
           <span className="apply-tag">CAREERCONNECT AI</span>
 
           <h2>
-            Apply for Your
-            <br />
-            Dream Job
-          </h2>
+  {selectedJob
+    ? `Application for ${selectedJob.title}`
+    : 'Apply for Your Dream Job'}
+</h2>
 
           <p>
             Take the next step towards your career goals.
